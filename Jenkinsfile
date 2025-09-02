@@ -6,6 +6,11 @@ pipeline {
                 git branch: 'master', url: 'https://github.com/Wu-Chun-Ming/hello-world-java1.git'
             }
         }
+        stage('Check Java Version') {
+            steps {
+                bat 'java -version'
+            }
+        }
         stage('Build') {
             steps { bat 'gradlew build' }
         }
